@@ -52,8 +52,6 @@ let products = {
 }
 
 for (let i of products.data) {
-    console.log('i is', i)
-
     let card = document.createElement("div")
     card.classList.add("card", i.category, "hide")
 
@@ -107,5 +105,19 @@ function filterProduct(value) {
                 element.classList.add("hide")
             }
         }
+    })
+
+    document.getElementById("search").addEventListener("click", () => {
+        let searchInput = document.getElementById("search-input")
+        let elements = document.querySelectorAll(".product-name")
+        let cards = document.querySelectorAll(".card")
+
+        elements.forEach((element, index) => {
+            if (element.innerText.includes((searchInput.value).toUpperCase())) {
+                cards[index].classList.remove("hide")
+            } else {
+                cards[index].classList.add("hide")
+            }
+        });
     })
 }

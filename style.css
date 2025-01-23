@@ -18,6 +18,10 @@ body {
     margin: 0 auto;
 }
 
+#search {
+    cursor: pointer;
+}
+
 #search-container {
     margin: 1em 0;
 }
